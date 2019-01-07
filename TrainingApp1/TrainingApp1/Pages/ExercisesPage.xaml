@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- xmlns und xmlns:x bedeuten nicht viel mehr als wie ein version identifier-->
+<!-- xmlns bedeutet, dass tags die im XAML definiert sind und keinen Präfix haben,
+    zu Xamarin.Forms gehören. Z.B. <ContenPage/> -->
+<!-- xmlns:x deklariert einen Präfix. Dieser wird verwendet für verschiedenste
+    Attribute, die intrinsisch zu XAML selber sind.-->
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TrainingApp1.Pages.ExercisesPage"
+             Title="Exercises">
+    <ContentPage.Content>
+        <StackLayout>
+          <Button x:Name="btnAdd" Text="Add exercise" Clicked="btnAdd_Clicked"/>
+          <ListView ItemsSource="{Binding Exercises, Mode=TwoWay}"
+                    SelectedItem="{Binding CurrentExercise, Mode=TwoWay}"
+                    ItemTapped="OnExerciseTapped">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell>
+                    <Label Text="{Binding Title}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                </ViewCell>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

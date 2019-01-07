@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainingApp1.Pages.RoutinePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Routine.Title, Mode=OneWay}" VerticalOptions="CenterAndExpand"/>
+            <Label Text="{Binding Routine.Description, Mode=OneWay}" VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"/>
+            <ListView x:Name="lvExercises" ItemsSource="{Binding Exercises, Mode=TwoWay}"
+                    SelectedItem="{Binding CurrentExercise, Mode=TwoWay}"
+                    ItemTapped="OnExerciseTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Title}" 
+                                   VerticalOptions="CenterAndExpand" 
+                                   HorizontalOptions="CenterAndExpand" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnEdit" Text="Edit" Clicked="BtnEdit_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

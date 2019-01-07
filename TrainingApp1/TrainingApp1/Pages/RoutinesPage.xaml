@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainingApp1.Pages.RoutinesPage"
+             Title="Routines">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="btnAdd" Text="Add routine" Clicked="btnAdd_Clicked"/>
+            <ListView ItemsSource="{Binding Routines, Mode=TwoWay}"
+                    SelectedItem="{Binding CurrentRoutine, Mode=TwoWay}"
+                    ItemTapped="OnRoutineTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Title}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
