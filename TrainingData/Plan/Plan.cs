@@ -12,6 +12,7 @@ namespace TrainingData.Plan
         private DateTime _Start;
         private DateTime _End;
         private int _Duration;
+        private int _IdOccurence;
 
         public string Title
         {
@@ -37,7 +38,11 @@ namespace TrainingData.Plan
             set => ChangePropertyValue(ref _End, value);
         }
 
-        
+        public int IdOccurence
+        {
+            get => _IdOccurence;
+            set => ChangePropertyValue(ref _IdOccurence, value);
+        }
 
         public List<PlanRoutine> PlanRoutines
         {

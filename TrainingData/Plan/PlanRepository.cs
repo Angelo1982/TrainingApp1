@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System;
 using System.Collections.Generic;
+using Common;
 
 namespace TrainingData.Plan
 {
@@ -25,8 +26,9 @@ namespace TrainingData.Plan
                     {
                         Id = 0,
                         Start = new DateTime(2019, 1, 1),
-                        Days = WeekDays.Monday | WeekDays.Wednesday,
-                        KindOfDuration = KindOfDuration.Weeks,
+                        IdOccurence = 0,
+                        PlanRoutines = new List<PlanRoutine>()
+
                     },
                     new Plan
                     {

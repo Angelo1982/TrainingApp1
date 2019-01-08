@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using TrainingData;
+using TrainingData.Routine;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

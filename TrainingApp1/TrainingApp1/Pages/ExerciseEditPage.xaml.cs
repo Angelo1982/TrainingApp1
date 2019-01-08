@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using TrainingData;
+using TrainingData.Exercise;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
