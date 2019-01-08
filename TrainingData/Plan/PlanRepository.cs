@@ -22,26 +22,32 @@ namespace TrainingData.Plan
         {
 
             Plans = new ObservableCollection<Plan>{
-                    new Plan
-                    {
-                        Id = 0,
-                        Start = new DateTime(2019, 1, 1),
-                        IdOccurence = 0,
-                        PlanRoutines = new List<PlanRoutine>()
-
-                    },
-                    new Plan
-                    {
-                        Id = 1,
-                    }
+                new Plan
+                {
+                    Id = 1,
+                    Start = new DateTime(2019, 1, 1),
+                    IdOccurence = 1,
+                },
+                new Plan
+                {
+                    Id = 2,
+                    Start = new DateTime(2019, 1, 10),
+                    IdOccurence = 2
+                },
+                new Plan
+                {
+                    Id = 3,
+                    Start = new DateTime(2019, 1, 20),
+                    IdOccurence = 3
+                }
             };
             SortPlans();
         }
 
-        public void Add(Plan Plan)
+        public void Add(Plan plan)
         {
-            Plan.Id = Plans.GetNewId();
-            Plans.Add(Plan);
+            plan.Id = Plans.GetNewId();
+            Plans.Add(plan);
             SortPlans();
         }
 
