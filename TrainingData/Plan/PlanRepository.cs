@@ -7,6 +7,11 @@ namespace TrainingData.Plan
 {
     public class PlanRepository
     {
+        /// <summary>
+        /// The list of available flags
+        /// </summary>
+        public ObservableCollection<Plan> Plans { get; private set; }
+
         private static PlanRepository _Instance;
         public static PlanRepository Instance
         {
@@ -49,10 +54,5 @@ namespace TrainingData.Plan
         {
             Plans.Sort((a, b) => a.Title.CompareTo(b.Title));
         }
-
-        /// <summary>
-        /// The list of available flags
-        /// </summary>
-        public ObservableCollection<Plan> Plans { get; private set; }
     }
 }
