@@ -9,10 +9,12 @@ namespace TrainingData.Plan
         private string _Description;
         private int _Id;
         private List<PlanRoutine> _PlanRoutines;
+        private List<PlanExercise> _PlanExercises;
         private DateTime _Start;
         private DateTime _End;
         private int _Duration;
         private int _IdOccurence;
+        
 
         public string Title
         {
@@ -48,6 +50,12 @@ namespace TrainingData.Plan
         {
             get => _PlanRoutines;
             set => ChangePropertyValue(ref _PlanRoutines, value);
+        }
+
+        public List<PlanExercise> PlanExercises
+        {
+            get => _PlanExercises;
+            set => ChangePropertyValue(ref _PlanExercises, value);
         }
 
         /// <summary>

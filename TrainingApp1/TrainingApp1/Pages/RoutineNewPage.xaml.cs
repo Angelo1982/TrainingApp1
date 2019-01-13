@@ -27,8 +27,15 @@ namespace TrainingApp1.Pages
         private async void BtnSave_Clicked(object sender, EventArgs e)
         {
 
-            _Routine.Exercises = new HashSet<int>(_ViewModel.Exercises.Where(ex => ex.IsSelected)
-                .Select(ex => ex.Exercise.Id).ToArray());
+            //_Routine.RoutineExercises = new HashSet<int>(_ViewModel.Exercises.Where(ex => ex.IsSelected)
+            //    .Select(ex => ex.Exercise.Id).ToArray());
+
+            //Was mache ich hier? Das verstehe ich momentan noch nicht:
+            //Speichere ich über die Routine separat von den RoutineExercises? 
+            //Und die RoutineExercise über ihr eigenes Repository? Und wie mache ich das beim laden der Routine?
+            //Oder speichere ich alles über die Routine und die Unit of Work speichert dann alles selber?
+
+            _Routine.RoutineExercises = new List<RoutineExercise>();
             RoutineRepository.Instance.Add(_Routine);
             
 

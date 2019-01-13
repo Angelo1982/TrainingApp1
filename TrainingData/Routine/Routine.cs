@@ -6,7 +6,7 @@ namespace TrainingData.Routine
     {
         private string _Title;
         private string _Description;
-        private HashSet<int> _Exercises;
+        private List<RoutineExercise> _RoutineExercises;
 
         public string Title
         {
@@ -18,10 +18,10 @@ namespace TrainingData.Routine
             get => _Description;
             set => ChangePropertyValue(ref _Description, value);
         }
-        public HashSet<int> Exercises
+        public List<RoutineExercise> RoutineExercises
         {
-            get => _Exercises;
-            set => ChangePropertyValue(ref _Exercises, value);
+            get => _RoutineExercises;
+            set => ChangePropertyValue(ref _RoutineExercises, value);
         }
 
         public override string ToString()

@@ -68,7 +68,7 @@ namespace TrainingData.Routine
 
         private void UpdateExercises()
         {
-            Exercises = new ObservableCollection<Exercise.Exercise>(_ExerciseRepository.Exercises.Where(e => Routine.Exercises.Contains(e.Id)));
+            Exercises = new ObservableCollection<Exercise.Exercise>(_ExerciseRepository.Exercises.Where(e => Routine.RoutineExercises.Contains(e.Id)));
         }
     }
 }
