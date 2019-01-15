@@ -31,7 +31,7 @@ namespace TrainingApp1.Pages
             }
 
             routine.Description = entryDescription.Text;
-            routine.Exercises = new HashSet<int>(vm.Exercises.Where(ex => ex.IsSelected)
+            routine.RoutineExercises = new HashSet<int>(vm.Exercises.Where(ex => ex.IsSelected)
                 .Select(ex => ex.Exercise.Id).ToArray());
 
             await this.Navigation.PopModalAsync();

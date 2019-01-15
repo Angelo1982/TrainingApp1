@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using TrainingData.Exercise;
@@ -68,7 +69,15 @@ namespace TrainingData.Routine
 
         private void UpdateExercises()
         {
-            Exercises = new ObservableCollection<Exercise.Exercise>(_ExerciseRepository.Exercises.Where(e => Routine.Exercises.Contains(e.Id)));
+            var ids = new List<int>();
+            foreach(var e in Routine.RoutineExercises)
+            {
+                ids.Add(e.Id);
+            }
+            Exercises = new ObservableCollection<Exercise.Exercise>
+                (_ExerciseRepository.Exercises.Where(e => ids.Contains(e.Id)));
         }
+
+
     }
 }

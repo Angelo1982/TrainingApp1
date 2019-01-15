@@ -9,6 +9,12 @@ namespace TrainingData.Routine
 {
     public class RoutineRepository
     {
+        private static int _RoutineExerciseId = 1;
+        public static int GetRoutineExerciseId()
+        {
+            return ++_RoutineExerciseId;
+        }
+
         private static RoutineRepository _Instance;
         public static RoutineRepository Instance
         {
@@ -29,14 +35,23 @@ namespace TrainingData.Routine
                         Id = 0,
                         Title = "Core",
                         Description = "Baue einen starken Rumpf auf.",
-                        Exercises=new HashSet<int>{1, 3}
+                        RoutineExercises = new List<RoutineExercise>
+                        {
+                            new RoutineExercise{Id = GetRoutineExerciseId(), IdExercise = 1, IdRoutine = 0},
+                            new RoutineExercise{Id = GetRoutineExerciseId(), IdExercise = 3, IdRoutine = 0},
+                        }
                     },
                     new Routine
                     {
                         Id = 1,
                         Title = "Upper Body",
                         Description = "Baue starke Arme, Schultern und Rücken auf",
-                        Exercises=new HashSet<int>{1, 2, 3}
+                        RoutineExercises = new List<RoutineExercise>
+                        {
+                            new RoutineExercise{Id = GetRoutineExerciseId(), IdExercise = 1, IdRoutine = 1},
+                            new RoutineExercise{Id = GetRoutineExerciseId(), IdExercise = 2, IdRoutine = 1},
+                            new RoutineExercise{Id = GetRoutineExerciseId(), IdExercise = 3, IdRoutine = 1},
+                        }
                     }
             };
             SortRoutines();
@@ -49,12 +64,9 @@ namespace TrainingData.Routine
             SortRoutines();
         }
 
-        private bool _Sorting;
         public void SortRoutines()
         {
-            _Sorting = true;
             Routines.Sort((a, b) => a.Title.CompareTo(b.Title));
-            _Sorting = false;
         }
 
         /// <summary>
