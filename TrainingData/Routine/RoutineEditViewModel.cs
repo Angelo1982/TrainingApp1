@@ -28,7 +28,7 @@ namespace TrainingData.Routine
             {
                 Exercises.Add(new SelectableExerciseViewModel
                 {
-                    IsSelected = routine.RoutineExercises?.Where(e => exercise.Id == e).Any() ?? false,
+                    IsSelected = routine.RoutineExercises?.Where(e => exercise.Id == e.Id).Any() ?? false,
                     Exercise = exercise
                 });
             }

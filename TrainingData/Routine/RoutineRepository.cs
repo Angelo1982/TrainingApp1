@@ -9,6 +9,12 @@ namespace TrainingData.Routine
 {
     public class RoutineRepository
     {
+        private static int _RoutineExerciseId = 1;
+        public static int GetRoutineExerciseId()
+        {
+            return ++_RoutineExerciseId;
+        }
+
         private static RoutineRepository _Instance;
         public static RoutineRepository Instance
         {
@@ -31,8 +37,8 @@ namespace TrainingData.Routine
                         Description = "Baue einen starken Rumpf auf.",
                         RoutineExercises = new List<RoutineExercise>
                         {
-                            new RoutineExercise{Id = 1, IdExercise = 1, IdRoutine = 0},
-                            new RoutineExercise{Id = 2, IdExercise = 3, IdRoutine = 0},
+                            new RoutineExercise{Id = GetRoutineExerciseId(), IdExercise = 1, IdRoutine = 0},
+                            new RoutineExercise{Id = GetRoutineExerciseId(), IdExercise = 3, IdRoutine = 0},
                         }
                     },
                     new Routine
@@ -42,9 +48,9 @@ namespace TrainingData.Routine
                         Description = "Baue starke Arme, Schultern und Rücken auf",
                         RoutineExercises = new List<RoutineExercise>
                         {
-                            new RoutineExercise{Id = 3, IdExercise = 1, IdRoutine = 1},
-                            new RoutineExercise{Id = 4, IdExercise = 2, IdRoutine = 1},
-                            new RoutineExercise{Id = 5, IdExercise = 3, IdRoutine = 1},
+                            new RoutineExercise{Id = GetRoutineExerciseId(), IdExercise = 1, IdRoutine = 1},
+                            new RoutineExercise{Id = GetRoutineExerciseId(), IdExercise = 2, IdRoutine = 1},
+                            new RoutineExercise{Id = GetRoutineExerciseId(), IdExercise = 3, IdRoutine = 1},
                         }
                     }
             };

@@ -36,9 +36,18 @@ namespace TrainingApp1.Pages
             //Oder speichere ich alles über die Routine und die Unit of Work speichert dann alles selber?
 
             _Routine.RoutineExercises = new List<RoutineExercise>();
+            var exerciseIds = _ViewModel.Exercises.Where(ex => ex.IsSelected).Select(ex => ex.Exercise.Id);
+            foreach(var id in exerciseIds)
+            {
+                _Routine.RoutineExercises.Add(new RoutineExercise
+                {
+                    Id = RoutineRepository.GetRoutineExerciseId(),
+                    IdExercise = id,
+                    IdRoutine = _Routine.Id
+                });
+            }
             RoutineRepository.Instance.Add(_Routine);
             
-
             await this.Navigation.PopModalAsync();
         }
 
