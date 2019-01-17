@@ -7,7 +7,6 @@ namespace TrainingData.Plan
     {
         private string _Title;
         private string _Description;
-        private int _Id;
         private List<PlanRoutine> _PlanRoutines;
         private List<PlanExercise> _PlanExercises;
         private DateTime _Start;

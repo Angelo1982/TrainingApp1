@@ -31,8 +31,19 @@ namespace TrainingApp1.Pages
             }
 
             routine.Description = entryDescription.Text;
-            routine.RoutineExercises = new HashSet<int>(vm.Exercises.Where(ex => ex.IsSelected)
-                .Select(ex => ex.Exercise.Id).ToArray());
+            //ToDo: Überprüfung einbauen, ob diese Liste überhaupt geändert hat. Denn jedesmal, wenn siech diese Model ändert,
+            //werden momentan neue RoutineExercises erzeugt.
+            routine.RoutineExercises = new List<RoutineExercise>();
+            var exerciseIds = vm.Exercises.Where(ex => ex.IsSelected).Select(ex => ex.Exercise.Id);
+            foreach (var id in exerciseIds)
+            {
+                routine.RoutineExercises.Add(new RoutineExercise
+                {
+                    Id = RoutineRepository.GetRoutineExerciseId(),
+                    IdExercise = id,
+                    IdRoutine = routine.Id
+                });
+            }
 
             await this.Navigation.PopModalAsync();
         }

@@ -7,13 +7,6 @@ namespace TrainingData.Exercise
     {
         private string _Title;
         private string _Description;
-        private int _Id;
-
-        public int Id
-        {
-            get => _Id;
-            set => ChangePropertyValue(ref _Id, value);
-        }
 
         public string Title
         {
