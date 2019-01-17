@@ -41,12 +41,12 @@ namespace TrainingApp1.Pages
             {
                 _Routine.RoutineExercises.Add(new RoutineExercise
                 {
-                    Id = RoutineRepository.GetRoutineExerciseId(),
+                    Id = RoutineRepository.GetRoutineExerciseId(), //IdHelper.GetRoutineExerciseId(_Uow.Routines);
                     IdExercise = id,
                     IdRoutine = _Routine.Id
                 });
             }
-            RoutineRepository.Instance.Add(_Routine);
+            RoutineRepository.Instance.Add(_Routine); //_Uow.Routines.Add(_Routine);
             
             await this.Navigation.PopModalAsync();
         }

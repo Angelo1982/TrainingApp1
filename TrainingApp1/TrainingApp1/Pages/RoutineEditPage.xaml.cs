@@ -37,9 +37,9 @@ namespace TrainingApp1.Pages
             var exerciseIds = vm.Exercises.Where(ex => ex.IsSelected).Select(ex => ex.Exercise.Id);
             foreach (var id in exerciseIds)
             {
-                routine.RoutineExercises.Add(new RoutineExercise
+                routine.RoutineExercises.Add(new RoutineExercise //_Uow.Routines.Add(...)
                 {
-                    Id = RoutineRepository.GetRoutineExerciseId(),
+                    Id = RoutineRepository.GetRoutineExerciseId(), //IdHelper.GetRoutineExerciseId(_Uow.Routines);
                     IdExercise = id,
                     IdRoutine = routine.Id
                 });

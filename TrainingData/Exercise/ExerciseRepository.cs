@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Collections.ObjectModel;
+using System.Linq.Expressions;
+
 using Common;
 
 namespace TrainingData.Exercise
 {
-    public class ExerciseRepository
+    public class ExerciseRepository : IRepository<Exercise>
     {
 
         private static ExerciseRepository _Instance;
@@ -28,6 +30,31 @@ namespace TrainingData.Exercise
             Exercises.Add(exercise);
             OrderExercises();
         }
+
+        /// <inheritdoc />
+        public void Remove(Exercise entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <inheritdoc />
+        public IEnumerable<Exercise> Find(Expression<Func<Exercise, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <inheritdoc />
+        public Exercise FindById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <inheritdoc />
+        public IEnumerable<Exercise> FindAll()
+        {
+            throw new NotImplementedException();
+        }
+
         private int GetId()
         {
             var ids = Exercises.Select(r => r.Id).ToList();

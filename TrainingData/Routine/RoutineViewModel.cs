@@ -15,14 +15,14 @@ namespace TrainingData.Routine
 
         public Routine Routine
         {
-            get => RoutineRepository.Instance.Routines.First(r => r.Id == _IdRoutine);
+            get => RoutineRepository.Instance.Routines.First(r => r.Id == _IdRoutine); //_Uow.Routines...
             set => RaisePropertyChanged(nameof(Routine));
         }
 
         public RoutineViewModel(int idRoutine)
         {
             _IdRoutine = idRoutine;
-            _ExerciseRepository = ExerciseRepository.Instance;
+            _ExerciseRepository = ExerciseRepository.Instance;//Wahrscheinlich unnötig
             Routine.PropertyChanged += OwnerRoutine_PropertyChanged;
             //Initial müssen die Routinen ins ViewModel geladen werden
             UpdateExercises();
@@ -44,7 +44,7 @@ namespace TrainingData.Routine
         {
             get
             {
-                return _ExerciseRepository.Exercises[currentExercise];
+                return _ExerciseRepository.Exercises[currentExercise];//_Uow...
             }
             set
             {
@@ -75,7 +75,7 @@ namespace TrainingData.Routine
                 ids.Add(e.Id);
             }
             Exercises = new ObservableCollection<Exercise.Exercise>
-                (_ExerciseRepository.Exercises.Where(e => ids.Contains(e.Id)));
+                (_ExerciseRepository.Exercises.Where(e => ids.Contains(e.Id)));//_Uow..
         }
 
 

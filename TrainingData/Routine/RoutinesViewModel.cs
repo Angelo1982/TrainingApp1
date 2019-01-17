@@ -9,14 +9,14 @@ namespace TrainingData.Routine
 {
     public class RoutinesViewModel : INotifyPropertyChanged
     {
-        private RoutineRepository _Repository;
+        private RoutineRepository _Repository; //IUnitOfWork _Uow;
         int currentRoutine;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public RoutinesViewModel()
         {
-            _Repository = RoutineRepository.Instance;
+            _Repository = RoutineRepository.Instance; //_Uow = UnitOfWork.Instance;
         }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace TrainingData.Routine
         {
             get
             {
-                return _Repository.Routines[currentRoutine];
+                return _Repository.Routines[currentRoutine];//_Uow.Routines.FindById(currentRoutine);
             }
 
             set
@@ -43,7 +43,7 @@ namespace TrainingData.Routine
         /// <summary>
         /// List of Routines
         /// </summary>
-        public ObservableCollection<Routine> Routines { get { return _Repository.Routines; } }
+        public ObservableCollection<Routine> Routines { get { return _Repository.Routines; } } //_Uow.Routines.FindAll();
 
         /// <summary>
         /// Raise the PropertyChanged notification.
