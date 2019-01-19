@@ -9,6 +9,7 @@ namespace TrainingData.Plan
         private string _Description;
         private List<PlanRoutine> _PlanRoutines;
         private List<PlanExercise> _PlanExercises;
+        private Occurence _Occurence;
         private DateTime _Start;
         private DateTime _End;
         private int _Duration;
@@ -43,6 +44,12 @@ namespace TrainingData.Plan
         {
             get => _IdOccurence;
             set => ChangePropertyValue(ref _IdOccurence, value);
+        }
+
+        public Occurence Occurence
+        {
+            get => _Occurence;
+            set => ChangePropertyValue(ref _Occurence, value);
         }
 
         public List<PlanRoutine> PlanRoutines

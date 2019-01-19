@@ -9,9 +9,9 @@ namespace TrainingData.Routine
     public class RoutineViewModel : NotifyModel
     {
         private ExerciseRepository _ExerciseRepository;
-        private int currentExercise;
+        private int _CurrentExercise;
         private ObservableCollection<Exercise.Exercise> _Exercises;
-        public int _IdRoutine { get; }
+        private int _IdRoutine;
 
         public Routine Routine
         {
@@ -44,14 +44,14 @@ namespace TrainingData.Routine
         {
             get
             {
-                return _ExerciseRepository.Exercises[currentExercise];//_Uow...
+                return _ExerciseRepository.Exercises[_CurrentExercise];//_Uow...
             }
             set
             {
                 int index = _ExerciseRepository.Exercises.IndexOf(value);
                 if (index >= 0)
                 {
-                    currentExercise = index;
+                    _CurrentExercise = index;
                     RaisePropertyChanged(nameof(CurrentExercise));
                 }
             }
