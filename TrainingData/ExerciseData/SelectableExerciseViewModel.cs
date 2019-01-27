@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace TrainingData.Exercise
+namespace TrainingData.ExerciseData
 {
     public class SelectableExerciseViewModel : NotifyModel
     {

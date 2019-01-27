@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace TrainingData.Exercise
+namespace TrainingData.ExerciseData
 {
     public class ExerciseViewModel : INotifyPropertyChanged
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TrainingData.Plan
+namespace TrainingData.PlanData
 {
     public class Occurence : NotifyModel
     {
@@ -22,6 +22,9 @@ namespace TrainingData.Plan
             set => ChangePropertyValue(ref _KindOfDuration, value);
         }
 
+        /// <summary>
+        /// F.e. 5 days, or 5 months, depending on the KindOfDuration
+        /// </summary>
         public int Duration
         {
             get => _Duration;

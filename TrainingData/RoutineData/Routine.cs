@@ -1,12 +1,12 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
 
-namespace TrainingData.Exercise
+namespace TrainingData.RoutineData
 {
-    public class Exercise : NotifyModel
+    public class Routine : NotifyModel
     {
         private string _Title;
         private string _Description;
+        private List<RoutineExercise> _RoutineExercises;
 
         public string Title
         {
@@ -20,11 +20,15 @@ namespace TrainingData.Exercise
             set => ChangePropertyValue(ref _Description, value);
         }
 
+        public List<RoutineExercise> RoutineExercises
+        {
+            get => _RoutineExercises;
+            set => ChangePropertyValue(ref _RoutineExercises, value);
+        }
 
         public override string ToString()
         {
             return Title;
         }
-
     }
 }

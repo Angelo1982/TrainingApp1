@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using TrainingData.ExerciseData;
 
-namespace TrainingData.Plan
+namespace TrainingData.PlanData
 {
     public class Plan : NotifyModel
     {
         private string _Title;
         private string _Description;
         private List<PlanRoutine> _PlanRoutines;
-        private List<PlanExercise> _PlanExercises;
+        private List<ExecutiveExercise> _PlanExercises;
         private Occurence _Occurence;
         private DateTime _Start;
         private DateTime _End;
         private int _Duration;
         private int _IdOccurence;
-        
 
         public string Title
         {
@@ -58,7 +58,10 @@ namespace TrainingData.Plan
             set => ChangePropertyValue(ref _PlanRoutines, value);
         }
 
-        public List<PlanExercise> PlanExercises
+        /// <summary>
+        /// Exercises not bound to a routine but sit directly on the plan itself
+        /// </summary>
+        public List<ExecutiveExercise> PlanExercises
         {
             get => _PlanExercises;
             set => ChangePropertyValue(ref _PlanExercises, value);

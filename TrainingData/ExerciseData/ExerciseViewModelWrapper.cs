@@ -4,9 +4,9 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
-using TrainingData.Routine;
+using TrainingData.RoutineData;
 
-namespace TrainingData.Exercise
+namespace TrainingData.ExerciseData
 {
     public class ExerciseViewModelWrapper : ExerciseViewModel
     {

@@ -1,22 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TrainingData.RoutineData;
 using TrainingData;
-using TrainingData.Routine;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TrainingApp1.Pages
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RoutineEditPage : ContentPage
 	{
 		public RoutineEditPage ()
 		{
 			InitializeComponent ();
-
 		}
 
         private async void BtnSave_Clicked(object sender, EventArgs e)
@@ -31,19 +28,24 @@ namespace TrainingApp1.Pages
             }
 
             routine.Description = entryDescription.Text;
-            //ToDo: Überprüfung einbauen, ob diese Liste überhaupt geändert hat. Denn jedesmal, wenn siech diese Model ändert,
-            //werden momentan neue RoutineExercises erzeugt.
-            routine.RoutineExercises = new List<RoutineExercise>();
+
+            var choosenRoutineExercises = new List<RoutineExercise>();
             var exerciseIds = vm.Exercises.Where(ex => ex.IsSelected).Select(ex => ex.Exercise.Id);
+
+            //Add the selected exercises to the routine
             foreach (var id in exerciseIds)
             {
-                routine.RoutineExercises.Add(new RoutineExercise //_Uow.Routines.Add(...)
+                choosenRoutineExercises.Add(new RoutineExercise //_Uow.Routines.Add(...)
                 {
-                    Id = RoutineRepository.GetRoutineExerciseId(), //IdHelper.GetRoutineExerciseId(_Uow.Routines);
+                    Id = TrainingContext.GetRoutineExerciseId(), //IdHelper.GetRoutineExerciseId(_Uow.Routines);
                     IdExercise = id,
                     IdRoutine = routine.Id
                 });
             }
+
+            //This causes a PropertyChanged event on the routine which leads to an update of the Exercises
+            //which is the collection that is represented in the ListView
+            routine.RoutineExercises = choosenRoutineExercises;
 
             await this.Navigation.PopModalAsync();
         }

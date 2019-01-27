@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrainingData;
-using TrainingData.Exercise;
+using TrainingData.ExerciseData;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

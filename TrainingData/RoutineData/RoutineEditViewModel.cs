@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
-using TrainingData.Exercise;
+using TrainingData.ExerciseData;
 
-namespace TrainingData.Routine
+namespace TrainingData.RoutineData
 {
     public class RoutineEditViewModel : NotifyModel
     {
@@ -28,7 +28,7 @@ namespace TrainingData.Routine
             {
                 Exercises.Add(new SelectableExerciseViewModel
                 {
-                    IsSelected = routine.RoutineExercises?.Where(e => exercise.Id == e.Id).Any() ?? false,
+                    IsSelected = routine.RoutineExercises?.Where(e => exercise.Id == e.IdExercise).Any() ?? false,
                     Exercise = exercise
                 });
             }

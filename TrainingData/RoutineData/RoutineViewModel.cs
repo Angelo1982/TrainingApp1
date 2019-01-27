@@ -2,15 +2,15 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using TrainingData.Exercise;
+using TrainingData.ExerciseData;
 
-namespace TrainingData.Routine
+namespace TrainingData.RoutineData
 {
     public class RoutineViewModel : NotifyModel
     {
         private ExerciseRepository _ExerciseRepository;
         private int _CurrentExercise;
-        private ObservableCollection<Exercise.Exercise> _Exercises;
+        private ObservableCollection<Exercise> _Exercises;
         private int _IdRoutine;
 
         public Routine Routine
@@ -31,7 +31,7 @@ namespace TrainingData.Routine
         private void OwnerRoutine_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             //Wenn sich auf der Routine die Exercises geändert haben, muss das ViewModel aktualisiert werden.
-            if (e.PropertyName == nameof(Exercises))
+            if (e.PropertyName == nameof(Routine.RoutineExercises))
                 UpdateExercises();
         }
 
@@ -40,7 +40,7 @@ namespace TrainingData.Routine
         /// <summary>
         /// Currently selected Exercise
         /// </summary>
-        public Exercise.Exercise CurrentExercise
+        public Exercise CurrentExercise
         {
             get
             {
@@ -60,21 +60,24 @@ namespace TrainingData.Routine
         /// <summary>
         /// List of Routines
         /// </summary>
-        public ObservableCollection<Exercise.Exercise> Exercises
+        public ObservableCollection<Exercise> Exercises
         {
             get => _Exercises;
             set => ChangePropertyValue(ref _Exercises, value);
         }
         
-
+        /// <summary>
+        /// When the exercises are updated, this affects the listview in the underlying page, the RoutinePage.
+        /// It leads to an update of the list itself
+        /// </summary>
         private void UpdateExercises()
         {
             var ids = new List<int>();
             foreach(var e in Routine.RoutineExercises)
             {
-                ids.Add(e.Id);
+                ids.Add(e.IdExercise);
             }
-            Exercises = new ObservableCollection<Exercise.Exercise>
+            Exercises = new ObservableCollection<Exercise>
                 (_ExerciseRepository.Exercises.Where(e => ids.Contains(e.Id)));//_Uow..
         }
 

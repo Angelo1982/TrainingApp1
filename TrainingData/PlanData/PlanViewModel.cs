@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TrainingData.Plan
+namespace TrainingData.PlanData
 {
     class PlanViewModel
     {

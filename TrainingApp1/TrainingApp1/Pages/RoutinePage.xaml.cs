@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TrainingData;
-using TrainingData.Exercise;
-using TrainingData.Routine;
+using TrainingData.ExerciseData;
+using TrainingData.RoutineData;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace TrainingApp1.Pages
 {
 
-	public partial class RoutinePage : ContentPage
+    public partial class RoutinePage : ContentPage
 	{
         private RoutineViewModel _ViewModel;
 
@@ -22,7 +16,7 @@ namespace TrainingApp1.Pages
             _ViewModel = new RoutineViewModel(idRoutine);
             BindingContext = _ViewModel;
             _ViewModel.PropertyChanged += ViewModel_PropertyChanged;
-            InitializeComponent ();
+            InitializeComponent();
         }
 
         private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -30,7 +24,6 @@ namespace TrainingApp1.Pages
             if (e.PropertyName == nameof(_ViewModel.Exercises))
             {
                 lvExercises.ItemsSource = _ViewModel.Exercises;
-                
             }
         }
 

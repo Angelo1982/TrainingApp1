@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using TrainingData;
-using TrainingData.Routine;
+using TrainingData.RoutineData;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -41,7 +41,7 @@ namespace TrainingApp1.Pages
             {
                 _Routine.RoutineExercises.Add(new RoutineExercise
                 {
-                    Id = RoutineRepository.GetRoutineExerciseId(), //IdHelper.GetRoutineExerciseId(_Uow.Routines);
+                    Id = TrainingContext.GetRoutineExerciseId(), //IdHelper.GetRoutineExerciseId(_Uow.Routines);
                     IdExercise = id,
                     IdRoutine = _Routine.Id
                 });

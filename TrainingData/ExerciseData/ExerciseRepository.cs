@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 using Common;
 
-namespace TrainingData.Exercise
+namespace TrainingData.ExerciseData
 {
     public class ExerciseRepository : IRepository<Exercise>
     {
@@ -34,7 +34,7 @@ namespace TrainingData.Exercise
         /// <inheritdoc />
         public void Remove(Exercise entity)
         {
-            throw new NotImplementedException();
+            Exercises.Remove(entity);
         }
 
         /// <inheritdoc />
@@ -46,13 +46,13 @@ namespace TrainingData.Exercise
         /// <inheritdoc />
         public Exercise FindById(int id)
         {
-            throw new NotImplementedException();
+            return Exercises.First(e => e.Id == id);
         }
 
         /// <inheritdoc />
         public IEnumerable<Exercise> FindAll()
         {
-            throw new NotImplementedException();
+            return Exercises;
         }
 
         private int GetId()
@@ -74,28 +74,10 @@ namespace TrainingData.Exercise
 
         private ExerciseRepository()
         {
-            var exercises = new List<Exercise>{
-                    new Exercise
-                    {
-                        Id = 1,
-                        Title = "Planks",
-                        Description = "Auf Ellbogen augstützen, Körper wie ein Brett. Becken nach innen kippen, Bauch anspannen"
-                    },
-                    new Exercise
-                    {
-                        Id = 2,
-                        Title = "Klimmzug",
-                        Description = "Bauch anspannen, Arme Ellbogenbreit, zuerst die Schulterblätter anspannen"
-                    },
-                    new Exercise
-                    {
-                        Id = 3,
-                        Title = "Liegestütze",
-                        Description = "Körper wie ein Brett. Mit der Nase den Boden berühren"
-                    }
-            };
-
-            Exercises = new ObservableCollection<Exercise>(exercises.OrderBy(e => e.Title).ToList());
+            Exercises = new ObservableCollection<Exercise>(TrainingContext
+                .Instance
+                .Exercises
+                .OrderBy(e => e.Title).ToList());
         }
     }
 }

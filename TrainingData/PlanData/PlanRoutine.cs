@@ -2,8 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TrainingData.RoutineData;
 
-namespace TrainingData.Plan
+namespace TrainingData.PlanData
 {
     public class PlanRoutine:NotifyModel
     {
@@ -15,6 +16,7 @@ namespace TrainingData.Plan
             get => _IdRoutine;
             set => ChangePropertyValue(ref _IdRoutine, value);
         }
+        public Routine Routine;
 
         public int IdPlan
         {

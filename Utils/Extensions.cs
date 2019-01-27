@@ -27,5 +27,12 @@ namespace Common
             var highestId = ids.Max();
             return ++highestId;
         }
+
+        public static int GetNewId<T>(this List<T> collection) where T : INotifyModel
+        {
+            var ids = collection.Select(r => r.Id).ToList();
+            var highestId = ids.Max();
+            return ++highestId;
+        }
     }
 }

@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using Common;
 
-namespace TrainingData.Plan
+namespace TrainingData.PlanData
 {
     public class PlanRepository
     {
         /// <summary>
         /// The list of available flags
         /// </summary>
-        public ObservableCollection<Plan> Plans { get; private set; }
+        public List<Plan> Plans { get; private set; }
 
         private static PlanRepository _Instance;
         public static PlanRepository Instance
@@ -26,26 +26,7 @@ namespace TrainingData.Plan
         private PlanRepository()
         {
 
-            Plans = new ObservableCollection<Plan>{
-                new Plan
-                {
-                    Id = 1,
-                    Start = new DateTime(2019, 1, 1),
-                    IdOccurence = 1,
-                },
-                new Plan
-                {
-                    Id = 2,
-                    Start = new DateTime(2019, 1, 10),
-                    IdOccurence = 2
-                },
-                new Plan
-                {
-                    Id = 3,
-                    Start = new DateTime(2019, 1, 20),
-                    IdOccurence = 3
-                }
-            };
+            Plans = TrainingContext.Instance.Plans;
             SortPlans();
         }
 

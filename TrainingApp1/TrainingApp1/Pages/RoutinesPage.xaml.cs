@@ -1,6 +1,6 @@
 ﻿using System;
 using TrainingData;
-using TrainingData.Routine;
+using TrainingData.RoutineData;
 using Xamarin.Forms;
 
 namespace TrainingApp1.Pages

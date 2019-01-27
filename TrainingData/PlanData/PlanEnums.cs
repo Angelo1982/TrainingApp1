@@ -1,7 +1,11 @@
 ﻿using System;
 
-namespace TrainingData.Plan
+namespace TrainingData.PlanData
 {
+    /// <summary>
+    /// Working with Flags: You can say myFlags.HasFlag(WeekDays.Monday). This way you don't need a switch to find out if 
+    /// Monday was set on myFlags. It is set like WeekDays myFlags = WeekDays.Monday | WeekDays.Friday;
+    /// </summary>
     [Flags]
     public enum WeekDays
     {

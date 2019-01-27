@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace TrainingData.Routine
+namespace TrainingData.RoutineData
 {
     public class RoutinesViewModel : INotifyPropertyChanged
     {
@@ -28,7 +28,6 @@ namespace TrainingData.Routine
             {
                 return _Repository.Routines[currentRoutine];//_Uow.Routines.FindById(currentRoutine);
             }
-
             set
             {
                 int index = _Repository.Routines.IndexOf(value);

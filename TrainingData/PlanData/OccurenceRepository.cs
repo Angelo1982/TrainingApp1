@@ -5,7 +5,7 @@ using System.Text;
 
 using Common;
 
-namespace TrainingData.Plan
+namespace TrainingData.PlanData
 {
     public class OccurenceRepository
     {

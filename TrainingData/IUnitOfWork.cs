@@ -1,16 +1,16 @@
 ﻿using System;
 
-using TrainingData.Plan;
+using TrainingData.PlanData;
 
 namespace TrainingData
 {
 
     public interface IUnitOfWork
     {
-        IRepository<Plan.Plan> Plans { get; }
+        IRepository<PlanData.Plan> Plans { get; }
         IRepository<Occurence> Occurences { get; }
-        IRepository<Routine.Routine> Routines { get; }
-        IRepository<Exercise.Exercise> Exercises { get; }
+        IRepository<RoutineData.Routine> Routines { get; }
+        IRepository<ExerciseData.Exercise> Exercises { get; }
         void Commit();
     }
 

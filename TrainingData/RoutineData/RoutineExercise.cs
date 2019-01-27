@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TrainingData.ExerciseData;
 
-namespace TrainingData.Routine
+namespace TrainingData.RoutineData
 {
     public class RoutineExercise : NotifyModel
     {
@@ -20,6 +21,17 @@ namespace TrainingData.Routine
             get => _IdExercise;
             set => ChangePropertyValue(ref _IdExercise, value);
         }
+        public Exercise Exercise
+        {
+            get
+            {
+                return TrainingContext.Instance.Exercises.Find(e => e.Id == _IdExercise);
+            }
+        }
 
+        public RoutineExercise()
+        {
+            
+        }
     }
 }
