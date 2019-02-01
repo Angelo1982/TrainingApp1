@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
+using TrainingApp1;
+using TrainingApp1.ViewModel;
+using TrainingApp1.ViewModel.Routines;
 using TrainingData;
 using TrainingData.RoutineData;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TrainingApp1.Pages
+namespace TrainingApp1.View.Routines
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RoutineNewPage : ContentPage
@@ -37,6 +39,7 @@ namespace TrainingApp1.Pages
 
             _Routine.RoutineExercises = new List<RoutineExercise>();
             var exerciseIds = _ViewModel.Exercises.Where(ex => ex.IsSelected).Select(ex => ex.Exercise.Id);
+            //ToDo: Not the duty of the View
             foreach(var id in exerciseIds)
             {
                 _Routine.RoutineExercises.Add(new RoutineExercise

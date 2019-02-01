@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TrainingData;
-using TrainingData.ExerciseData;
+using TrainingApp1.ViewModel.Exercises;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TrainingApp1.Pages
+namespace TrainingApp1.View.Exercises
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ExercisePage : ContentPage
 	{
         private readonly ExerciseViewModel _ViewModel;

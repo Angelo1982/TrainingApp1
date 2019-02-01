@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TrainingData.RoutineData;
-using TrainingData;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TrainingData.RoutineData;
+using TrainingApp1.ViewModel.Routines;
+using TrainingData;
 
-namespace TrainingApp1.Pages
+namespace TrainingApp1.View.Routines
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RoutineEditPage : ContentPage

@@ -18,10 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Pages\ExerciseEditPage.xaml.cs">
+    <Compile Update="View\Exercises\ExerciseEditPage.xaml.cs">
       <DependentUpon>ExerciseEditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Pages\ExercisesPage.xaml.cs">
+    <Compile Update="View\Exercises\ExercisesPage.xaml.cs">
       <DependentUpon>ExercisesPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -30,31 +30,31 @@
     <EmbeddedResource Update="MainePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\ExerciseEditPage.xaml">
+    <EmbeddedResource Update="View\Exercises\ExerciseEditPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\ExerciseNewPage.xaml">
+    <EmbeddedResource Update="View\Exercises\ExerciseNewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\ExercisePage.xaml">
+    <EmbeddedResource Update="View\Exercises\ExercisePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\ExercisesPage.xaml">
+    <EmbeddedResource Update="View\Exercises\ExercisesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\PlanPage.xaml">
+    <EmbeddedResource Update="View\Plans\PlanPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\RoutineEditPage.xaml">
+    <EmbeddedResource Update="View\Routines\RoutineEditPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\RoutineNewPage.xaml">
+    <EmbeddedResource Update="View\Routines\RoutineNewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\RoutinePage.xaml">
+    <EmbeddedResource Update="View\Routines\RoutinePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\RoutinesPage.xaml">
+    <EmbeddedResource Update="View\Routines\RoutinesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

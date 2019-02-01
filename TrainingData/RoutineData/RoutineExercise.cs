@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TrainingData.ExerciseData;
+﻿using TrainingData.ExerciseData;
 
 namespace TrainingData.RoutineData
 {

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TrainingData.PlanData;
 using TrainingData.ExerciseData;
+using TrainingData.PlanData;
 using TrainingData.RoutineData;
-
 
 namespace TrainingData
 {
@@ -125,7 +124,7 @@ namespace TrainingData
                 }
             };
 
-            Plans = new List<Plan>()
+            Plans = new List<Plan>
             {
                 new Plan
                 {

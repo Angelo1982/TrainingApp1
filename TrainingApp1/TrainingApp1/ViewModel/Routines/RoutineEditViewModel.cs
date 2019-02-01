@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
+using TrainingApp1.ViewModel.Exercises;
+using TrainingData;
 using TrainingData.ExerciseData;
+using TrainingData.RoutineData;
 
-namespace TrainingData.RoutineData
+namespace TrainingApp1.ViewModel.Routines
 {
     public class RoutineEditViewModel : NotifyModel
     {

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
+﻿using TrainingData;
+using TrainingData.ExerciseData;
 
-namespace TrainingData.ExerciseData
+namespace TrainingApp1.ViewModel.Exercises
 {
     public class SelectableExerciseViewModel : NotifyModel
     {

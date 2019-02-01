@@ -1,6 +1,4 @@
-﻿using TrainingData.ExerciseData;
-
-namespace TrainingData.ExerciseData
+﻿namespace TrainingData.ExerciseData
 {
     public class ExecutiveExercise : NotifyModel
     {

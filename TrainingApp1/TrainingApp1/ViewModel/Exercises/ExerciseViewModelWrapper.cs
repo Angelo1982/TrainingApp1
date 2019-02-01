@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
-using TrainingData.RoutineData;
+﻿using System.Collections.ObjectModel;
+using TrainingApp1.ViewModel.Routines;
+using TrainingData.ExerciseData;
 
-namespace TrainingData.ExerciseData
+namespace TrainingApp1.ViewModel.Exercises
 {
     public class ExerciseViewModelWrapper : ExerciseViewModel
     {

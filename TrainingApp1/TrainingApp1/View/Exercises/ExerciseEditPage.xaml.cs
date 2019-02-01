@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TrainingData;
+using TrainingApp1;
+using TrainingApp1.ViewModel.Exercises;
 using TrainingData.ExerciseData;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TrainingApp1.Pages
+namespace TrainingApp1.View.Exercises
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ExerciseNewPage : ContentPage
+    public partial class ExerciseEditPage : ContentPage
     {
-        public ExerciseNewPage()
+        private bool CreateNew { get; }
+
+        public ExerciseEditPage()
         {
             InitializeComponent();
         }
@@ -29,11 +28,18 @@ namespace TrainingApp1.Pages
 
         private async void btnSave_Clicked(object sender, EventArgs e)
         {
-            var exercise = new Exercise();
-            exercise.Title = entryTitle.Text;
-            exercise.Description = entryDescription.Text;
-            ExerciseRepository.Instance.Add(exercise);
-            
+            Exercise currentExercise;
+            ExerciseViewModel vm = (ExerciseViewModel)BindingContext;
+            currentExercise = vm.CurrentExercise;
+
+            if (currentExercise.Title != entryTitle.Text)
+            {
+                currentExercise.Title = entryTitle.Text;
+                ExerciseRepository.Instance.OrderExercises();
+            }
+
+            currentExercise.Description = entryDescription.Text;
+
             await this.Navigation.PopModalAsync();
         }
 

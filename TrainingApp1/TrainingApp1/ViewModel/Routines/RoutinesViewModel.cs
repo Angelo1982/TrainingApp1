@@ -4,8 +4,9 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using TrainingData.RoutineData;
 
-namespace TrainingData.RoutineData
+namespace TrainingApp1.ViewModel.Routines
 {
     public class RoutinesViewModel : INotifyPropertyChanged
     {

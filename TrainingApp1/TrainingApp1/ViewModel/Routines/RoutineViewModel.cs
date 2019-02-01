@@ -2,9 +2,11 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using TrainingData;
 using TrainingData.ExerciseData;
+using TrainingData.RoutineData;
 
-namespace TrainingData.RoutineData
+namespace TrainingApp1.ViewModel.Routines
 {
     public class RoutineViewModel : NotifyModel
     {

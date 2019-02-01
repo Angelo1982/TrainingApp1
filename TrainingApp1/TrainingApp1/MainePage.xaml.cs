@@ -1,4 +1,6 @@
-﻿using TrainingApp1.Pages;
+﻿using TrainingApp1.View.Exercises;
+using TrainingApp1.View.Plans;
+using TrainingApp1.View.Routines;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

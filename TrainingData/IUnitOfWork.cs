@@ -1,6 +1,6 @@
 ﻿using System;
-
 using TrainingData.PlanData;
+using TrainingData.RoutineData;
 
 namespace TrainingData
 {
@@ -9,7 +9,7 @@ namespace TrainingData
     {
         IRepository<PlanData.Plan> Plans { get; }
         IRepository<Occurence> Occurences { get; }
-        IRepository<RoutineData.Routine> Routines { get; }
+        IRepository<Routine> Routines { get; }
         IRepository<ExerciseData.Exercise> Exercises { get; }
         void Commit();
     }

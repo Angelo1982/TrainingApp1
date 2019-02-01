@@ -2,8 +2,9 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using TrainingData.ExerciseData;
 
-namespace TrainingData.ExerciseData
+namespace TrainingApp1.ViewModel.Exercises
 {
     public class ExerciseViewModel : INotifyPropertyChanged
     {

@@ -1,9 +1,10 @@
 ﻿using System;
-using TrainingData.ExerciseData;
-using TrainingData.RoutineData;
+using TrainingApp1.View.Exercises;
+using TrainingApp1.ViewModel.Exercises;
+using TrainingApp1.ViewModel.Routines;
 using Xamarin.Forms;
 
-namespace TrainingApp1.Pages
+namespace TrainingApp1.View.Routines
 {
 
     public partial class RoutinePage : ContentPage
