@@ -40,6 +40,11 @@ namespace TrainingData.PlanData
             set => ChangePropertyValue(ref _End, value);
         }
 
+        public string Time
+        {
+            get => _Start.ToString("HH:mm") + " - " + _End.ToString("HH:mm") + " " + (_End - _Start).TotalMinutes + "min";
+        }
+
         public int IdOccurence
         {
             get => _IdOccurence;

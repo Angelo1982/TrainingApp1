@@ -1,4 +1,5 @@
 ﻿using TrainingApp1.ViewModel.Exercises;
+using TrainingApp1.ViewModel.Plans;
 using TrainingApp1.ViewModel.Routines;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +12,8 @@ namespace TrainingApp1
         public App()
         {
             DependencyService.Register<ExerciseViewModel>();
-            DependencyService.Register<RoutinesViewModel>();
+            DependencyService.Register<RoutinesViewModel>(); 
+            DependencyService.Register<PlansViewModel>();
             InitializeComponent();
             //NavigationPage braucht man für StackNavigation
             this.MainPage = new NavigationPage(new MainePage());

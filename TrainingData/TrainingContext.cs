@@ -129,7 +129,8 @@ namespace TrainingData
                 new Plan
                 {
                     Id = 0,
-                    Start = new DateTime(2019, 1, 1),
+                    Start = new DateTime(2019, 1, 1, 12, 0, 0),
+                    End = new DateTime(2019, 1, 1, 13, 30, 0),
                     IdOccurence = 1,
                     Occurence = Occurences.Find(o => o.Id == 1),
                     PlanExercises = ExecutiveExercises.FindAll(ee => ee.IdPlanPath == 0 && ee.IsPlanExercise),
@@ -138,7 +139,8 @@ namespace TrainingData
                 new Plan
                 {
                     Id = 1,
-                    Start = new DateTime(2019, 1, 10),
+                    Start = new DateTime(2019, 1, 10, 16, 30, 0),
+                    End = new DateTime(2019, 1, 10, 17, 30, 0),
                     IdOccurence = 2,
                     Occurence = Occurences.Find(o => o.Id == 2),
                     PlanExercises = ExecutiveExercises.FindAll(ee => ee.IdPlanPath == 1 && ee.IsPlanExercise),
@@ -147,7 +149,8 @@ namespace TrainingData
                 new Plan
                 {
                     Id = 2,
-                    Start = new DateTime(2019, 1, 20),
+                    Start = new DateTime(2019, 1, 20, 20, 0, 0),
+                    End = new DateTime(2019, 1, 20, 21, 30, 0),
                     IdOccurence = 3,
                     Occurence = Occurences.Find(o => o.Id == 3),
                     PlanExercises = ExecutiveExercises.FindAll(ee => ee.IdPlanPath == 2 && ee.IsPlanExercise),

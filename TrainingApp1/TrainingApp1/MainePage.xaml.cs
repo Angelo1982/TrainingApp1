@@ -13,7 +13,7 @@ namespace TrainingApp1
         {
             InitializeComponent();
 
-            this.Children.Add(new PlanPage());
+            this.Children.Add(new PlansPage());
             this.Children.Add(new RoutinesPage());
             this.Children.Add(new ExercisesPage());
         }

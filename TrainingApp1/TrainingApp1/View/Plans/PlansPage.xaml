@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainingApp1.View.Plans.PlansPage"
+             Title="Plan">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Plans, Mode=TwoWay}"
+                  SelectedItem="{Binding CurrentPlan, Mode=TwoWay}"
+                  HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="2" BackgroundColor="Brown">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" /> <!-- *: Take up remaining space-->
+                                    <ColumnDefinition Width="auto" /> <!-- auto: Take up necessary space-->
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" 
+                                        Grid.Column="0" 
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Center"
+                                        BackgroundColor="AntiqueWhite" 
+                                        Text="{Binding Start, StringFormat='{0:ddd dd.MM.yy}'}"/>
+                                <Label Grid.Row="1" 
+                                        Grid.Column="0"
+                                        VerticalTextAlignment="Center"
+                                        HorizontalTextAlignment="Center"
+                                        BackgroundColor="Red" 
+                                        Text="{Binding Time}"/>
+                                <Button Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Text="Start"/>
+                                <Button Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Text="Edit" />
+                                <ListView Grid.Row="2" 
+                                                Grid.Column="0" 
+                                                Grid.ColumnSpan="3" 
+                                                ItemsSource="{Binding PlanRoutines}"
+                                                BackgroundColor="Yellow">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                            <Label Text="{Binding Routine.Title}"/>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    </ContentPage.Content>
+</ContentPage>

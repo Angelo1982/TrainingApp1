@@ -24,6 +24,9 @@
     <Compile Update="View\Exercises\ExercisesPage.xaml.cs">
       <DependentUpon>ExercisesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="View\Plans\PlansPage.xaml.cs">
+      <DependentUpon>PlansPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -42,7 +45,7 @@
     <EmbeddedResource Update="View\Exercises\ExercisesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Plans\PlanPage.xaml">
+    <EmbeddedResource Update="View\Plans\PlansPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\Routines\RoutineEditPage.xaml">

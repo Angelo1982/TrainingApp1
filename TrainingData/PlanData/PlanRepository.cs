@@ -25,7 +25,6 @@ namespace TrainingData.PlanData
 
         private PlanRepository()
         {
-
             Plans = TrainingContext.Instance.Plans;
             SortPlans();
         }
@@ -39,7 +38,7 @@ namespace TrainingData.PlanData
 
         public void SortPlans()
         {
-            Plans.Sort((a, b) => a.Title.CompareTo(b.Title));
+            //Plans.Sort((a, b) => a.Title.CompareTo(b.Title));
         }
     }
 }

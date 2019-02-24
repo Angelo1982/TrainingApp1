@@ -8,7 +8,7 @@ namespace TrainingApp1.View.Routines
 {
     public partial class RoutinesPage : ContentPage
 	{
-        RoutinesViewModel _ViewModel;
+        private RoutinesViewModel _ViewModel;
         public RoutinesPage ()
 		{
             _ViewModel = DependencyService.Get<RoutinesViewModel>();
